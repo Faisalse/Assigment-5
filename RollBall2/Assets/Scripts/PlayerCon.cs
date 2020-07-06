@@ -50,9 +50,9 @@ public class PlayerCon : MonoBehaviour
     {
         endTime = Time.time - startTime;
         second = ((int)endTime % 60);
-        Timer.text = "Timer: " + second + " You have 30 seconds to Capture three palindrome";
+        Timer.text = "Timer: " + second + " You have fifty seconds to Capture three palindromes";
 
-        if(second > 30)
+        if(second > 50)
         {
             
                 ScreenNumber = 0;
@@ -268,15 +268,15 @@ public class PlayerCon : MonoBehaviour
         Instantiate(myPrefab, new Vector3(-8, 0.5f, 0), Quaternion.identity);
         Instantiate(myPrefab, new Vector3(-8, 0.5f, 3), Quaternion.identity);
         Instantiate(myPrefab, new Vector3(-12, 0.5f, 6), Quaternion.identity);
-        text1.text = randomStringList[0];
-        text2.text = randomStringList[1];
+        text1.text = randomStringList[8];
+        text2.text = randomStringList[5];
         text3.text = randomStringList[2];
         text4.text = randomStringList[3];
         text5.text = randomStringList[4];
-        text6.text = randomStringList[5];
+        text6.text = randomStringList[1];
         text7.text = randomStringList[6];
         text8.text = randomStringList[7];
-        text9.text = randomStringList[8];
+        text9.text = randomStringList[0];
         text10.text = randomStringList[9];
 
     }

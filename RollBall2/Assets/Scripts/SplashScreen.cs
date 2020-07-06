@@ -12,7 +12,6 @@ public class SplashScreen : MonoBehaviour
     private void Start()
     {
         abbb.Play();
-        Debug.Log("Screeen Number " + ScreenNumber);
     }
     public void startGame()
     {
