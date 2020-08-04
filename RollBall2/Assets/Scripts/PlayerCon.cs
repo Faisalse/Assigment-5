@@ -53,27 +53,20 @@ public class PlayerCon : MonoBehaviour
         Timer.text = "Timer: " + second + " You have fifty seconds to Capture three palindromes";
 
         if(second > 50)
-        {
-            
+        {           
                 ScreenNumber = 0;
-                SceneManager.LoadScene(ScreenNumber);
-            
-            
+                SceneManager.LoadScene(ScreenNumber);    
         }
         if (count == 3)
-        {
-            
+        {         
             if (r)
             {
                 backgroundMusic.Stop();
                 text11.text = "YOU HAVE COLLECTED ALL PALINDROME! GAME OVER";
                 gameEndSound();
                 r = false;
-            }
-            
+            }          
         }
-
-
     }
 
 
@@ -83,177 +76,169 @@ public class PlayerCon : MonoBehaviour
         float horizental = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 vector3 = new Vector3(horizental, 0.0f, vertical);
-        rb.AddForce(vector3 * speed);
-        
-        
+        rb.AddForce(vector3 * speed);     
     }
 
     void OnTriggerEnter(Collider other)
     {    
-            if (count <= 2)
-            {
-                if (other.gameObject.CompareTag("Pick Up"))
-                {
+     if(count <= 2)
+     {
+      if (other.gameObject.CompareTag("Pick Up"))
+      {
+       if (Vector3.Distance(other.gameObject.transform.position, 
+                text1.transform.position) == 0)
+       {
+        if (ChechStringforPanlindrome(text1.text))
+        {
+          text1.text = "";
+          other.gameObject.SetActive(false);
+          count += 1;
+          counterPalindrome.text = "Palindrome Capture: " + count;
+        }
+        else
+        {
+          redAlertSound();
+                        }
+        }
+         else if (Vector3.Distance(other.gameObject.transform.position, text2.transform.position) == 0)
+         {
+          if(ChechStringforPanlindrome(text2.text))
+          {
+            text2.text = "";
+            other.gameObject.SetActive(false);
+            count += 1;
+            counterPalindrome.text = "Palindrome Capture: " + count;
+          }
+          else
+          {
+            redAlertSound();
+          }
+         }
+         else if (Vector3.Distance(other.gameObject.transform.position, text3.transform.position) == 0)
+         {
+          if (ChechStringforPanlindrome(text3.text))
+          {
+            text3.text = "";
+            other.gameObject.SetActive(false);
+            count += 1;
+            counterPalindrome.text = "Palindrome Capture: " + count;
+          }
+          else
+          {
+           redAlertSound();
+          }
+         }
+         else if (Vector3.Distance(other.gameObject.transform.position, text4.transform.position) == 0)
+         {
+          if(ChechStringforPanlindrome(text4.text))
+          {
+           text4.text = "";
+           other.gameObject.SetActive(false);
+           count += 1;
+           counterPalindrome.text = "Palindrome Capture: " + count;
+          }
+          else
+          {
+           redAlertSound();
+          }
+         }
+         else if(Vector3.Distance(other.gameObject.transform.position, text5.transform.position) == 0)
+         {
+          if(ChechStringforPanlindrome(text5.text))
+          {
+           text5.text = "";
+           other.gameObject.SetActive(false);
+           count += 1;
+           counterPalindrome.text = "Palindrome Capture: " + count;
+          }
+          else
+          {
+           redAlertSound();
+          }
+         }
+         else if(Vector3.Distance(other.gameObject.transform.position, text6.transform.position) == 0)
+         {
+          if(ChechStringforPanlindrome(text6.text))
+          {
+          text6.text = "";
+          other.gameObject.SetActive(false);
+          count += 1;
+          counterPalindrome.text = "Palindrome Capture: " + count;
+          }
+          else
+          {
+           redAlertSound();
+          }
+         }
+         else if(Vector3.Distance(other.gameObject.transform.position, text7.transform.position) == 0)
+         {
+          if(ChechStringforPanlindrome(text7.text))
+          {
+           text7.text = "";
+           other.gameObject.SetActive(false);
+           count +=1;
+           counterPalindrome.text = "Palindrome Capture: " + count;
+          }
+          else
+          {
+           redAlertSound();
+          }
+         }
+         else if(Vector3.Distance(other.gameObject.transform.position, text8.transform.position) == 0)
+         {
+          if (ChechStringforPanlindrome(text8.text))
+          {
+           text8.text = "";
+           other.gameObject.SetActive(false);
+           count += 1;
+           counterPalindrome.text = "Palindrome Capture: " + count;
+          }
+          else
+          {
+           redAlertSound();
+          }
+         }
+         else if(Vector3.Distance(other.gameObject.transform.position, text9.transform.position) == 0)
+         {
+          if (ChechStringforPanlindrome(text9.text))
+          {
+           text9.text = "";
+           other.gameObject.SetActive(false);
+           count += 1;
+           counterPalindrome.text = "Palindrome Capture: " + count;
+          }
+          else
+          {
+           redAlertSound();
+          }
+         }
+         else if(Vector3.Distance(other.gameObject.transform.position, text10.transform.position) == 0)
+         {
+          if (ChechStringforPanlindrome(text10.text))
+          {
+           text10.text = "";
+           other.gameObject.SetActive(false);
+           count = count + 1;
+           counterPalindrome.text = "Palindrome Capture: " + count;
+          }
+          else
+          {
+           redAlertSound();
+          }
+         }
+      else
+      {
 
-
-                    if (Vector3.Distance(other.gameObject.transform.position, text1.transform.position) == 0)
-                    {
-                        if (ChechStringforPanlindrome(text1.text))
-                        {
-                            text1.text = "";
-                            other.gameObject.SetActive(false);
-                            count += 1;
-                            counterPalindrome.text = "Palindrome Capture: " + count;
-                        }
-                        else
-                        {
-                            redAlertSound();
-                        }
-                    }
-                    else if (Vector3.Distance(other.gameObject.transform.position, text2.transform.position) == 0)
-                    {
-                        if (ChechStringforPanlindrome(text2.text))
-                        {
-                            text2.text = "";
-                            other.gameObject.SetActive(false);
-                            count += 1;
-                            counterPalindrome.text = "Palindrome Capture: " + count;
-                        }
-                        else
-                        {
-                            redAlertSound();
-                        }
-                    }
-                    else if (Vector3.Distance(other.gameObject.transform.position, text3.transform.position) == 0)
-                    {
-                        if (ChechStringforPanlindrome(text3.text))
-                        {
-                            text3.text = "";
-                            other.gameObject.SetActive(false);
-                            count += 1;
-                            counterPalindrome.text = "Palindrome Capture: " + count;
-                        }
-                        else
-                        {
-                            redAlertSound();
-                        }
-                    }
-                    else if (Vector3.Distance(other.gameObject.transform.position, text4.transform.position) == 0)
-                    {
-                        if (ChechStringforPanlindrome(text4.text))
-                        {
-                            text4.text = "";
-                            other.gameObject.SetActive(false);
-                            count += 1;
-                            counterPalindrome.text = "Palindrome Capture: " + count;
-                        }
-                        else
-                        {
-                            redAlertSound();
-                        }
-                    }
-                    else if (Vector3.Distance(other.gameObject.transform.position, text5.transform.position) == 0)
-                    {
-                        if (ChechStringforPanlindrome(text5.text))
-                        {
-                            text5.text = "";
-                            other.gameObject.SetActive(false);
-                            count += 1;
-                            counterPalindrome.text = "Palindrome Capture: " + count;
-                        }
-                        else
-                        {
-                            redAlertSound();
-                        }
-                    }
-                    else if (Vector3.Distance(other.gameObject.transform.position, text6.transform.position) == 0)
-                    {
-                        if (ChechStringforPanlindrome(text6.text))
-                        {
-                            text6.text = "";
-                            other.gameObject.SetActive(false);
-                            count += 1;
-                            counterPalindrome.text = "Palindrome Capture: " + count;
-                        }
-                        else
-                        {
-                            redAlertSound();
-                        }
-                    }
-                    else if (Vector3.Distance(other.gameObject.transform.position, text7.transform.position) == 0)
-                    {
-                        if (ChechStringforPanlindrome(text7.text))
-                        {
-                            text7.text = "";
-                            other.gameObject.SetActive(false);
-                            count +=1;
-                            counterPalindrome.text = "Palindrome Capture: " + count;
-                        }
-                        else
-                        {
-                            redAlertSound();
-                        }
-                    }
-                    else if (Vector3.Distance(other.gameObject.transform.position, text8.transform.position) == 0)
-                    {
-                        if (ChechStringforPanlindrome(text8.text))
-                        {
-                            text8.text = "";
-                            other.gameObject.SetActive(false);
-                            count += 1;
-                            counterPalindrome.text = "Palindrome Capture: " + count;
-                        }
-                        else
-                        {
-                            redAlertSound();
-                        }
-                    }
-                    else if (Vector3.Distance(other.gameObject.transform.position, text9.transform.position) == 0)
-                    {
-                        if (ChechStringforPanlindrome(text9.text))
-                        {
-                            text9.text = "";
-                            other.gameObject.SetActive(false);
-                            count += 1;
-                            counterPalindrome.text = "Palindrome Capture: " + count;
-                        }
-                        else
-                        {
-                            redAlertSound();
-                        }
-                    }
-                    else if (Vector3.Distance(other.gameObject.transform.position, text10.transform.position) == 0)
-                    {
-                        if (ChechStringforPanlindrome(text10.text))
-                        {
-                            text10.text = "";
-                            other.gameObject.SetActive(false);
-                            count = count + 1;
-                            counterPalindrome.text = "Palindrome Capture: " + count;
-                        }
-                        else
-                        {
-                            redAlertSound();
-                        }
-                    }
-                    else
-                    {
-
-                    }
-
-                }
-            }
-            else
-            {
-                backgroundMusic.Stop();
-                text11.text = "YOU HAVE COLLECTED ALL PALINDROME! GAME OVER";
-                gameEndSound();
-
-
-            }
-        
-        
+      }
+     }
     }
+    else
+    {
+     backgroundMusic.Stop();
+     text11.text = "YOU HAVE COLLECTED ALL PALINDROME! GAME OVER";
+     gameEndSound();
+     }       
+}
 
 // This function is used to generate collectable and give string to 3d text
     void generateRandomCollectablean()
